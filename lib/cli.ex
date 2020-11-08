@@ -25,7 +25,7 @@ defmodule Escrap.Cli do
       links = request(url)
       |> extract_links
 
-      if opts[:save], do: save_links(links)
+      if opts[:save], do: save_links(url, links)
     end
   end
 
@@ -48,8 +48,17 @@ defmodule Escrap.Cli do
     links
   end
 
-  defp save_links(links) do
-    IO.puts("Saving links:")
-    IO.inspect(links)
+  defp save_links(url_id, links) do
+    IO.puts("Saving links")
+
+    file = "output/links.txt"
+
+    content = links
+    |> Enum.join("\n")
+
+    case File.write(file, content) do
+      :ok -> IO.puts("[#{url_id}] Links saved to: #{file}")
+      {:error, reason} -> IO.puts("Error on save links: #{reason}")
+    end
   end
 end

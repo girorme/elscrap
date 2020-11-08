@@ -30,6 +30,9 @@ defmodule Elscrap.MixProject do
   end
 
   defp escript do
-    [main_module: Escrap.Cli]
+    [
+      main_module: Escrap.Cli,
+      path: "bin/elscrap"
+    ]
   end
 end
