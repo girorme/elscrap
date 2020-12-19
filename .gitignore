@@ -27,3 +27,5 @@ elscrap-*.tar
 /tmp
 
 elscrap
+
+output/*.txt

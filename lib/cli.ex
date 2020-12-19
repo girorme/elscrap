@@ -1,4 +1,4 @@
-defmodule Escrap.Cli do
+defmodule Elscrap.Cli do
   def main (args \\ []) do
     args
     |> parse_args
@@ -16,7 +16,7 @@ defmodule Escrap.Cli do
   defp scrap(opts) do
     url = opts[:url] || nil
 
-    unless url do
+    unless url do # validação url
       IO.puts("Url required")
       System.halt(0)
     end
@@ -24,6 +24,8 @@ defmodule Escrap.Cli do
     if opts[:extract_links] do
       links = request(url)
       |> extract_links
+
+      IO.puts("#{Enum.join(links, "\n")}")
 
       if opts[:save], do: save_links(url, links)
     end
