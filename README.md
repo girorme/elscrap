@@ -1,7 +1,7 @@
 # elscrap
 Simple sraping tool made in elixir
 
-Artigo: [https://girorme.github.io/2020/12/17/Elixir-e-o-web-scraping/](https://girorme.github.io/en/posts/elixir-webscraping/)
+Artigo: [https://girorme.github.io/en/posts/elixir-webscraping/](https://girorme.github.io/en/posts/elixir-webscraping/)
 
 ### Build
 ```
